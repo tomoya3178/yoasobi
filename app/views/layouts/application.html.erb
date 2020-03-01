@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yoasobi</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="bs-docs-nav navbar navbar-static-top">
+      <div class="page-header">
+        <h1>
+          <%= link_to "yoasobi", '#', id: "logo" %>
+          <br>
+          <small>Whatcha up to?</small>
+        </h1>
+      </div>
+    </header>
+    
+    <%= yield %>
+  </body>
+</html>

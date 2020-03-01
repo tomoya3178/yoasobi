@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  title: 
+  date: 2020-03-01
+  place_id: 1
+
+two:
+  url: MyString
+  title: 
+  date: 2020-03-01
+  place_id: 1
