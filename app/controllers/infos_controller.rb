@@ -1,11 +1,14 @@
 class InfosController < ApplicationController
   before_action :set_info, only: [:show, :edit, :update, :destroy]
+  
+  require 'date'
 
   # GET /infos
   # GET /infos.json
   def index
     @places = Place.all
     @infos = Info.all
+    @today = @infos.where('date = ?', Date.today)
   end
 
   # GET /infos/1

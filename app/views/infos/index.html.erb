@@ -1,7 +1,8 @@
 <!-- タブ・メニュー -->
 <ul class="nav nav-tabs">
-  <li class="active"><a href="#place_0">All</a></li>
-	<% @places.each.with_index(1) do |place, index| %>
+  <li class="active" data-toggle="tab"><a href="#place_0" data-toggle="tab">Today</a></li>
+  <li data-toggle="tab"><a href="#place_1" data-toggle="tab">All</a></li>
+	<% @places.each.with_index(2) do |place, index| %>
 	  <li data-toggle="tab"><a href="#place_<%= index %>" data-toggle="tab"><%= place.name %></a></li>
 	<% end %>
 </ul>
@@ -9,6 +10,16 @@
 <!-- タブ内容 -->
 <div class="tab-content" style="margin: 10px;">
 	<div class="tab-pane active" id="place_0">
+		<% @today.each do |info| %>
+  		<a href="<%= info.url %>" target="_blank">
+  			<%= info.title %>
+  		</a>
+  		<br>
+  		<%= info.date %><br>
+  		<br>
+		<% end %>
+	</div>
+	<div class="tab-pane" id="place_1">
 		<% @infos.order(date: :desc).each do |info| %>
   		<a href="<%= info.url %>" target="_blank">
   			<%= info.title %>
@@ -18,7 +29,7 @@
   		<br>
 		<% end %>
 	</div>
-	<% @places.each.with_index(1) do |place, index| %>
+	<% @places.each.with_index(2) do |place, index| %>
 		<div class="tab-pane" id="place_<%= index %>">
   		<% place_id = place.id %>
   		<% infos = @infos.where(place_id: place_id) %>
