@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* yoasobiとは
+パーティーを見逃さないためのウェブサービスです
+グッドパーティーに出会えますように
 
-Things you may want to cover:
+* 仕組み
+クローラーで取得したパーティー情報を表示します
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* URL
+https://yoasobi.herokuapp.com
