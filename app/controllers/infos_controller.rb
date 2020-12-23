@@ -9,7 +9,7 @@ class InfosController < ApplicationController
     @places = Place.all
     @infos = Info.all
     @today = @infos.where('date = ?', Date.today)
-    @week = @infos.where('date IN (?)', Date.today.all_week)
+    @thisWeek = @infos.where('date IN (?)', Date.today.all_week)
   end
 
   # GET /infos/1

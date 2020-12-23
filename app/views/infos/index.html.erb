@@ -21,7 +21,7 @@
 		<% end %>
 	</div>
 	<div class="tab-pane active" id="place_1">
-		<% @week.order(date: :desc).each do |info| %>
+		<% @thisWeek.order(date: :desc).each do |info| %>
   		<a href="<%= info.url %>" target="_blank">
   			<%= info.title %>
   		</a>
