@@ -38,6 +38,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
 gem 'anemone'
+gem 'carrierwave'
+gem 'fog-aws'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
