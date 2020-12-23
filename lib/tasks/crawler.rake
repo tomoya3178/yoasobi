@@ -14,10 +14,13 @@ namespace :crawler do
         ]
             
         urls.each do |url|
+            flyer_xpath = ''
+            
             if (url === 'https://club-joule.com/category/event/')
                 pattern = %r[2020\/.+]
                 date_xpath = '//*[@id="loop_box"]/div[1]/div[1]'
                 title_xpath = '//*[@id="loop_box"]/div[2]/div'
+                flyer_xpath = '//*[@id="loop_box"]/div[4]/div[1]/div[3]/a/img'
                 place_id = 1
             end
             
@@ -46,6 +49,7 @@ namespace :crawler do
                 anemone.on_pages_like(pattern) do |page|
                     doc = Nokogiri::HTML.parse(page.body.toutf8)
                     url = page.url.to_s
+                    flyer = doc.xpath(flyer_xpath).attribute('src').value
                     title = doc.xpath(title_xpath).text
                     date = doc.xpath(date_xpath).text
                     
@@ -61,6 +65,7 @@ namespace :crawler do
                     unless Info.exists?(url: url)
                         Info.create(
                             url: url,
+                            flyer: flyer,
                             title: title,
                             date: date,
                             place_id: place_id
