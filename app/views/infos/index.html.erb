@@ -1,7 +1,7 @@
 <!-- タブ・メニュー -->
 <ul class="nav nav-tabs">
   <li class="active" data-toggle="tab"><a href="#place_0" data-toggle="tab">Today</a></li>
-  <li data-toggle="tab"><a href="#place_1" data-toggle="tab">Week</a></li>
+  <li data-toggle="tab"><a href="#place_1" data-toggle="tab">This week</a></li>
   <li data-toggle="tab"><a href="#place_2" data-toggle="tab">All</a></li>
 	<% @places.each.with_index(3) do |place, index| %>
 	  <li data-toggle="tab"><a href="#place_<%= index %>" data-toggle="tab"><%= place.name %></a></li>
